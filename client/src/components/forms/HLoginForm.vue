@@ -30,14 +30,14 @@ const vars = useThemeVars()
 <template>
   <form @submit.prevent="onSubmit" class="flex flex-col items-center w-60">
     <HImage :src="logo" alt="" size="100px" />
-    <div class="text-lg mt-4 select-none">登录到 Hexon</div>
-    <HInput placeholder="用户名" v-model="username" class="mt-4" clearable>
+    <div class="text-lg mt-4 select-none">Login Hexon</div>
+    <HInput placeholder="Username" v-model="username" class="mt-4" clearable>
       <template v-slot:prefix>
         <HIcon :name="HIconName.Contact" />
       </template>
     </HInput>
     <HInput
-      placeholder="密码"
+      placeholder="Password"
       v-model="password"
       class="mt-4"
       attr-type="password"
@@ -47,7 +47,7 @@ const vars = useThemeVars()
         <HIcon :name="HIconName.Keyboard12Key" />
       </template>
     </HInput>
-    <HButton class="mt-4" block>登录</HButton>
+    <HButton class="mt-4" block>Login</HButton>
     <div class="mt-4 flex w-full">
       <HButton
         type="common"
@@ -56,12 +56,12 @@ const vars = useThemeVars()
         @click="onForget"
         attr-type="button"
       >
-        忘记密码
+        Lost password
         <HPopover position="bottom-left">
           <div class="text-xs max-w-sm">
-            运行
+            Run
             <span class="font-mono">pnpm resetpwd</span>
-            重置密码
+            reset password
           </div>
         </HPopover>
       </HButton>
@@ -72,7 +72,7 @@ const vars = useThemeVars()
         @click="onHelp"
         attr-type="button"
       >
-        帮助
+        Help
       </HButton>
     </div>
   </form>

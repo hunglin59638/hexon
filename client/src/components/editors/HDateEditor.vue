@@ -14,7 +14,7 @@ const emits = defineEmits<{
 const { classNames } = createClassNames("h-date-editor")
 const vars = useThemeVars()
 const text = computed(() =>
-  props.date ? props.date.format("YYYY-MM-DD hh:mm:ss") : "未指定数据"
+  props.date ? props.date.format("YYYY-MM-DD hh:mm:ss") : "Unassigned data"
 )
 </script>
 <template>

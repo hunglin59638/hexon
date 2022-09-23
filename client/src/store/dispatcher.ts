@@ -50,7 +50,7 @@ export const useDispatcher = defineStore("dispatcher", {
         this.router.push({ name: "home" })
       } catch (e) {
         this.notification.notify({
-          title: "登陆失败",
+          title: "Login failed",
           type: "error",
         })
       }
@@ -58,11 +58,11 @@ export const useDispatcher = defineStore("dispatcher", {
     async changePassword(payload: IChangePasswordFormPayload) {
       return changePassword(payload.oldPassword, payload.newPassword).then(
         () => {
-          this.notification.notify({ type: "success", title: "密码修改成功" })
+          this.notification.notify({ type: "success", title: "Password change was successful" })
         },
         (err) => {
           this.notification.notify({
-            title: "密码修改失败",
+            title: "Password change was failed",
             desc: (err as Error).message,
             type: "error",
             duration: 5000,
@@ -73,12 +73,12 @@ export const useDispatcher = defineStore("dispatcher", {
     async changeUsername(username: string) {
       return changeUsername(username).then(
         () => {
-          this.notification.notify({ type: "success", title: "用户名修改成功" })
+          this.notification.notify({ type: "success", title: "Username change was successful" })
           return this.getUsername()
         },
         (err) => {
           this.notification.notify({
-            title: "用户名修改失败",
+            title: "Username change was failed",
             desc: (err as Error).message,
             type: "error",
             duration: 5000,
@@ -103,12 +103,12 @@ export const useDispatcher = defineStore("dispatcher", {
           () => {
             this.notification.notify({
               type: "success",
-              title: "新建成功",
+              title: "Success to create",
             })
           },
           (err) => {
             this.notification.notify({
-              title: "新建失败",
+              title: "Fail to create",
               desc: (err as Error).message,
               type: "error",
               duration: 5000,
@@ -124,18 +124,18 @@ export const useDispatcher = defineStore("dispatcher", {
       const mainStore = useMainStore()
       this.dialog.create({
         type: "warning",
-        title: "删除确认",
-        content: "删除后需手动恢复",
+        title: "Confirm to delete",
+        content: "Required to recover manually after deletion",
         actions: [
-          { type: "common", label: "取消" },
+          { type: "common", label: "Cancel" },
           {
             type: "error",
-            label: "删除",
+            label: "Delete",
             run: () => {
               mainStore.deleteArticle(id.type, id.source).then(() => {
                 this.notification.notify({
                   type: "success",
-                  title: "删除成功",
+                  title: "Success to delete",
                 })
                 // FIXME 不是每次都要跳转
                 this.router.push({ name: "home" })
@@ -152,14 +152,14 @@ export const useDispatcher = defineStore("dispatcher", {
         await detailStore.saveArticle(raw).then(
           () => {
             this.notification.notify({
-              title: "保存成功",
+              title: "Save successfully",
               type: "success",
             })
             this.reloadBlogData()
           },
           (err) => {
             this.notification.notify({
-              title: "文章保存失败",
+              title: "Save Failed",
               desc: (err as Error).message,
               type: "error",
               duration: 5000,
@@ -185,7 +185,7 @@ export const useDispatcher = defineStore("dispatcher", {
           this.goHome()
         } else {
           this.notification.notify({
-            title: "文章载入失败",
+            title: "Loading failed",
             desc: getErrorMessage(err),
             type: "error",
             duration: 5000,
@@ -200,13 +200,13 @@ export const useDispatcher = defineStore("dispatcher", {
     async publishArticle(source: string) {
       this.dialog.create({
         type: "warning",
-        title: "发布确认",
-        content: "发布后需手动恢复",
+        title: "",
+        content: "Required to recover manually after publishing",
         actions: [
-          { type: "common", label: "取消" },
+          { type: "common", label: "Cancel" },
           {
             type: "info",
-            label: "发布",
+            label: "Publish",
             run: () => {
               this.doPublishArticle(source)
             },
@@ -226,7 +226,7 @@ export const useDispatcher = defineStore("dispatcher", {
         await mainStore.publishArticle(removePrefixAndExt(source)).then(
           (article) => {
             this.notification.notify({
-              title: "发布成功",
+              title: "Publish successfully",
               type: "success",
             })
             const detailStore = useDetailStore()
@@ -243,7 +243,7 @@ export const useDispatcher = defineStore("dispatcher", {
           },
           (err) => {
             this.notification.notify({
-              title: "文章发布失败",
+              title: "Publish failed",
               desc: (err as Error).message,
               type: "error",
               duration: 5000,
@@ -262,12 +262,12 @@ export const useDispatcher = defineStore("dispatcher", {
       const mainStore = useMainStore()
       mainStore.getBlogData().catch((err) => {
         this.notification.notify({
-          title: `博客数据刷新失败`,
+          title: `Fail to refresh blog data`,
           desc: (err as Error).message,
           type: "error",
           actions: [
             {
-              label: "重试",
+              label: "Retry",
               run: () => {
                 this.reloadBlogData()
               },
@@ -280,7 +280,7 @@ export const useDispatcher = defineStore("dispatcher", {
       const mainStore = useMainStore()
       mainStore.getBlogData().catch((err) => {
         this.notification.notify({
-          title: `博客数据载入失败`,
+          title: `Fail to loading blog data`,
           desc: (err as Error).message,
           type: "error",
           duration: 5000,

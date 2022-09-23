@@ -65,9 +65,9 @@ const onCancel = () => {
   emits("on-cancel")
 }
 const text = computed(() => {
-  if (page.value) return "页面"
-  if (draft.value) return "草稿"
-  return "文章"
+  if (page.value) return "Page"
+  if (draft.value) return "Draft"
+  return "Post"
 })
 const titleInputRef = ref<HInputRef | null>(null)
 onMounted(() => {
@@ -87,7 +87,7 @@ onMounted(() => {
           class="label text-right"
           style="grid-column: labels"
         >
-          标题
+          Title
         </div>
         <div style="grid-column: controls">
           <HInput
@@ -115,7 +115,7 @@ onMounted(() => {
                 @update:checked="(v) => (v ? (layout = 'page') : (layout = ''))"
                 class="mr-4"
               >
-                页面
+                Page
               </HCheckbox>
               <HCheckbox
                 :checked="draft"
@@ -124,7 +124,7 @@ onMounted(() => {
                 "
                 class="mr-4"
               >
-                草稿
+                Draft
               </HCheckbox>
             </div>
             <HButton
@@ -134,7 +134,7 @@ onMounted(() => {
               inverted
               @click="advanced = true"
             >
-              高级模式
+              Advanced Mode
             </HButton>
           </div>
         </div>
@@ -205,7 +205,7 @@ onMounted(() => {
               inverted
               @click="advanced = false"
             >
-              简洁模式
+              Simple mode
             </HButton>
           </div>
         </div>
@@ -219,10 +219,10 @@ onMounted(() => {
           @click="onCancel"
           attr-type="button"
         >
-          取消
+          Cancel
         </HButton>
         <HButton size="small" attr-type="submit" :disabled="disabled">
-          创建
+          Create
         </HButton>
       </div>
     </form>

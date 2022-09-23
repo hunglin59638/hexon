@@ -18,49 +18,49 @@ const colors = computed(() => ({
   draft: t.value.color.draft,
 }))
 const model: NavListItem[] = [
-  { type: "title", label: "操作" },
+  { type: "title", label: "Operation" },
   {
     type: "item",
-    text: "部署",
+    text: "Deploy",
     icon: HIconName.Airplane,
     color: colors.value.deploy,
     key: "deploy",
   },
   {
     type: "item",
-    text: "生成",
+    text: "Generate",
     icon: HIconName.Library,
     color: colors.value.generate,
     key: "generate",
   },
   {
     type: "item",
-    text: "清理",
+    text: "Clean",
     icon: HIconName.EraseTool,
     color: colors.value.clean,
     key: "clean",
   },
   {
     type: "item",
-    text: "同步到 Git",
+    text: "Sync to Git",
     icon: HIconName.Upload,
     color: colors.value.gitsave,
     key: "gitsave",
   },
   {
     type: "item",
-    text: "从 Git 同步",
+    text: "Sync from Git",
     icon: HIconName.Download,
     color: colors.value.gitsync,
     key: "gitsync",
   },
   {
     type: "title",
-    label: "筛选",
+    label: "Selection",
   },
   {
     type: "item",
-    text: "全部",
+    text: "Total",
     icon: HIconName.Home,
     sub: 4,
     color: colors.value.all,
@@ -69,7 +69,7 @@ const model: NavListItem[] = [
   },
   {
     type: "item",
-    text: "文章",
+    text: "Post",
     icon: HIconName.Edit,
     sub: 2,
     color: colors.value.post,
@@ -78,7 +78,7 @@ const model: NavListItem[] = [
   },
   {
     type: "item",
-    text: "页面",
+    text: "Page",
     icon: HIconName.Page,
     sub: 1,
     color: colors.value.page,
@@ -87,7 +87,7 @@ const model: NavListItem[] = [
   },
   {
     type: "item",
-    text: "草稿",
+    text: "Draft",
     icon: HIconName.Read,
     sub: 1,
     color: colors.value.draft,
@@ -96,11 +96,11 @@ const model: NavListItem[] = [
   },
   {
     type: "title",
-    label: "分类",
+    label: "Category",
   },
   {
     type: "item",
-    text: "分类一",
+    text: "Category 1",
     indent: 0,
     icon: HIconName.Folder,
     color: t.value.color.folder,
@@ -109,7 +109,7 @@ const model: NavListItem[] = [
   },
   {
     type: "item",
-    text: "分类二",
+    text: "Category 2",
     indent: 0,
     icon: HIconName.Folder,
     color: t.value.color.folder,
@@ -118,7 +118,7 @@ const model: NavListItem[] = [
   },
   {
     type: "item",
-    text: "分类二子",
+    text: "Category 2 sub",
     indent: 1,
     icon: HIconName.Folder,
     color: t.value.color.folder,

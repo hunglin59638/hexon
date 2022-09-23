@@ -7,21 +7,21 @@
   },
   "tags": [
     {
-      "name": "模板"
+      "name": "template"
     },
     {
-      "name": "鉴权"
+      "name": "authentication"
     }
   ],
   "paths": {
     "/signin": {
       "post": {
-        "summary": "登录",
-        "x-apifox-folder": "鉴权",
+        "summary": "login",
+        "x-apifox-folder": "authentication",
         "x-apifox-status": "developing",
         "deprecated": false,
         "description": "",
-        "tags": ["鉴权"],
+        "tags": ["authentication"],
         "parameters": [],
         "requestBody": {
           "content": {
@@ -43,7 +43,7 @@
         },
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "success",
             "content": {
               "application/json": {
                 "schema": {
@@ -63,7 +63,7 @@
             }
           },
           "401": {
-            "description": "没有权限",
+            "description": "Permission denied",
             "content": {
               "application/json": {
                 "schema": {
@@ -85,15 +85,15 @@
     "/template/frontmatter": {
       "get": {
         "summary": "frontmatter_template",
-        "x-apifox-folder": "模板",
+        "x-apifox-folder": "template",
         "x-apifox-status": "developing",
         "deprecated": false,
-        "description": "支持 frontmatter 模板服务",
-        "tags": ["模板"],
+        "description": "Support frontmatter template service",
+        "tags": ["template"],
         "parameters": [],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -122,11 +122,11 @@
       },
       "post": {
         "summary": "frontmatter_template",
-        "x-apifox-folder": "模板",
+        "x-apifox-folder": "template",
         "x-apifox-status": "developing",
         "deprecated": false,
-        "description": "支持 frontmatter 模板服务",
-        "tags": ["模板"],
+        "description": "Support frontmatter template service",
+        "tags": ["template"],
         "parameters": [],
         "requestBody": {
           "content": {
@@ -154,7 +154,7 @@
         },
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "success",
             "content": {
               "application/json": {
                 "schema": {

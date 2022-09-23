@@ -15,7 +15,7 @@ const verifyPassword = ref("")
 const isSame = computed(() => newPassword.value === verifyPassword.value)
 const error = computed(() => {
   if (!verifyPassword.value) return ""
-  return !isSame.value ? "两次密码不同" : ""
+  return !isSame.value ? "The Passwords is different" : ""
 })
 const disabled = computed(
   () =>
@@ -34,7 +34,7 @@ const onChange = () =>
   <div>
     <HInput
       attr-type="password"
-      placeholder="旧密码"
+      placeholder="Old password"
       type="secondary"
       v-model="oldPassword"
       error=""
@@ -45,7 +45,7 @@ const onChange = () =>
     </HInput>
     <HInput
       attr-type="password"
-      placeholder="新密码"
+      placeholder="New password"
       type="secondary"
       v-model="newPassword"
       :error="error"
@@ -56,7 +56,7 @@ const onChange = () =>
     </HInput>
     <HInput
       attr-type="password"
-      placeholder="重复新密码"
+      placeholder="Vertify password"
       type="secondary"
       v-model="verifyPassword"
       :error="error"
@@ -67,15 +67,15 @@ const onChange = () =>
     </HInput>
     <div class="mt-2">
       <HButton class="mr-2" :disabled="disabled" @click="onChange">
-        更改密码
+        Change password
       </HButton>
       <HButton inverted>
-        忘记密码
+        Lost password
         <HPopover position="bottom-left">
           <div class="text-xs max-w-sm">
-            运行
+            Run
             <span class="font-mono">pnpm resetpwd</span>
-            重置密码
+            reset password
           </div>
         </HPopover>
       </HButton>

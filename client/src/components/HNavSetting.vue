@@ -33,9 +33,9 @@ const vars = useThemeVars()
     </div>
     <div class="flex-1 flex flex-col ml-2">
       <div class="name text-sm font-bold">
-        {{ name || "未命名用户" }}
+        {{ name || "Unnamed User" }}
       </div>
-      <div class="status text-xs">已登录</div>
+      <div class="status text-xs">Logined</div>
     </div>
     <HIcon :name="HIconName.Settings" />
     <slot></slot>

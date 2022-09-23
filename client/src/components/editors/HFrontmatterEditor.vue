@@ -92,7 +92,7 @@ const onSetTemplate = (v: string) => {
     <div class="text-sm mb-2" :style="{ color: vars.colorError }">
       {{ error }}
     </div>
-    <HButton @click="onTemplate">使用模板</HButton>
+    <HButton @click="onTemplate">Use template</HButton>
     <HModal v-model:show="showTemplateModal">
       <FrontMatterTemplateModal @set-template="(v) => onSetTemplate(v)" />
     </HModal>

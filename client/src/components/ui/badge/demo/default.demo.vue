@@ -5,7 +5,7 @@ import { useThemeVars } from "../../theme"
 const vars = useThemeVars()
 </script>
 <template>
-  <h2>基础</h2>
+  <h2>Basic</h2>
 
   <HBadge>1</HBadge>
   <HBadge>2</HBadge>
@@ -14,29 +14,29 @@ const vars = useThemeVars()
   <HBadge>HBadge</HBadge>
   <HBadge>HBadge</HBadge>
 
-  <h2>可点击</h2>
+  <h2>Clicked</h2>
 
   <HBadge clickable>HBadge</HBadge>
   <HBadge clickable>HBadge</HBadge>
   <HBadge clickable>HBadge</HBadge>
 
-  <h2>和图标一起</h2>
+  <h2>With Icon</h2>
 
   <HBadge clickable>
     <HIcon :name="HIconName.Search" />
-    搜索
+    Search
   </HBadge>
   <HBadge clickable>
     <HIcon :name="HIconName.Add" />
-    添加
+    Add
   </HBadge>
   <HBadge clickable>
     <HIcon :name="HIconName.Edit" />
-    编辑
+    Edit
   </HBadge>
   <HBadge clickable>
     <HIcon :name="HIconName.Tag" />
-    标签
+    Tag
   </HBadge>
 
   <HBadge clickable><HIcon :name="HIconName.Search" /></HBadge>
@@ -44,22 +44,22 @@ const vars = useThemeVars()
   <HBadge clickable><HIcon :name="HIconName.Edit" /></HBadge>
   <HBadge clickable><HIcon :name="HIconName.Tag" /></HBadge>
 
-  <h2>不同颜色</h2>
+  <h2>Different color</h2>
 
   <HBadge :bgColor="vars.colorError" clickable>
     <HIcon :name="HIconName.Delete" />
-    删除
+    Delete
   </HBadge>
   <HBadge :bgColor="vars.colorWarning" clickable>
     <HIcon :name="HIconName.Warning" />
-    警告
+    Warning
   </HBadge>
   <HBadge :bgColor="vars.colorSuccess" clickable>
     <HIcon :name="HIconName.Accept" />
-    确定
+    Accept
   </HBadge>
 
-  <h2>圆角</h2>
+  <h2>Round</h2>
 
   <HBadge rounded>1</HBadge>
   <HBadge rounded>2</HBadge>

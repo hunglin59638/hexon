@@ -58,12 +58,12 @@ const onAction = (payload: HEditorToolbarActionPayload) => {
       changed.value
         ? dialog.create({
             type: "warning",
-            title: "有未保存的更改",
-            content: "确定要离开么？",
+            title: "Somethind is unsaved",
+            content: "Don't Save",
             actions: [
-              { label: "再想想", type: "common" },
+              { label: "Cancel", type: "common" },
               {
-                label: "是的",
+                label: "Yes",
                 type: "error",
                 run: () => {
                   dispatcher.viewArticle({ type, source })
@@ -94,7 +94,7 @@ const onSave = () => {
 }
 useEventListener("beforeunload", (e) => {
   if (!changed.value) return
-  if (!confirm("确定离开？你所做的更改可能未保存。")) {
+  if (!confirm("Your chages may not be saved")) {
     e.preventDefault()
     e.returnValue = ""
   }
@@ -186,8 +186,8 @@ const updateFm = (fm: { [key: string]: unknown }) => {
   <HLoading :loading="detailStore.isLoading">
     <ErroredView v-if="detailStore.error">
       <div>
-        <HButton inverted @click="onHome">回主页</HButton>
-        <HButton class="ml-2" @click="load">重试</HButton>
+        <HButton inverted @click="onHome">Back to Home</HButton>
+        <HButton class="ml-2" @click="load">Retry</HButton>
       </div>
     </ErroredView>
     <div class="flex h-full w-full overflow-hidden" v-else>

@@ -67,7 +67,7 @@ const onAddTag = () => {
       </HBadge>
       &nbsp;
     </div>
-    <HInput v-model="newTag" placeholder="新标签" @keydown.enter="onAddTag">
+    <HInput v-model="newTag" placeholder="New tag" @keydown.enter="onAddTag">
       <template #suffix>
         <HIcon :name="HIconName.Add" clickable @click="onAddTag" />
       </template>

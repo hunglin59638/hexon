@@ -20,10 +20,10 @@ const detailStore = useDetailStore()
 <template>
   <HToolbar class="px-2">
     <HButton size="small" @click="emits('on-action', { type: 'back' })">
-      返回
+      Back
     </HButton>
     <div class="flex-1"></div>
-    <HBadge class="mr-2" v-if="props.saving" rounded>保存中...</HBadge>
+    <HBadge class="mr-2" v-if="props.saving" rounded>Saving...</HBadge>
     <template v-else>
       <HBadge
         class="mr-2"
@@ -31,7 +31,7 @@ const detailStore = useDetailStore()
         v-if="props.changed"
         rounded
       >
-        未保存
+        Unsaved
       </HBadge>
     </template>
     <HButton

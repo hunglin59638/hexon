@@ -6,19 +6,19 @@ import { useDispatcher } from "./dispatcher"
 function success() {
   notification.notify({
     type: "success",
-    title: "成功",
+    title: "Success",
   })
 }
 function fail(e: unknown) {
   const err = e instanceof Error ? e : new Error(e as any)
   console.log(getErrorMessage(err))
   const id = notification.notify({
-    title: "失败",
+    title: "Failure",
     desc: getErrorMessage(err),
     type: "error",
     actions: [
       {
-        label: "好的",
+        label: "OK",
         run() {
           notification.close(id)
         },

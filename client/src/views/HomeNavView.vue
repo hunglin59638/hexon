@@ -34,38 +34,38 @@ const colors = computed(() => ({
 
 //#region action
 const actionItems: NavListItem[] = [
-  { type: "title", label: "操作" },
+  { type: "title", label: "Operation" },
   {
     type: "item",
-    text: "部署",
+    text: "Deploy",
     icon: HIconName.Airplane,
     color: colors.value.deploy,
     key: "deploy",
   },
   {
     type: "item",
-    text: "生成",
+    text: "Generate",
     icon: HIconName.Library,
     color: colors.value.generate,
     key: "generate",
   },
   {
     type: "item",
-    text: "清理",
+    text: "Clean",
     icon: HIconName.EraseTool,
     color: colors.value.clean,
     key: "clean",
   },
   {
     type: "item",
-    text: "同步到 Git",
+    text: "Sync to Git",
     icon: HIconName.Upload,
     color: colors.value.gitsave,
     key: "gitsave",
   },
   {
     type: "item",
-    text: "从 Git 同步",
+    text: "Sync from Git",
     icon: HIconName.Download,
     color: colors.value.gitsync,
     key: "gitsync",
@@ -84,11 +84,11 @@ const type = computed(() => articleListStore.filter.type)
 const filterItems: ComputedRef<NavListItem[]> = computed(() => [
   {
     type: "title",
-    label: "筛选",
+    label: "Selection",
   },
   {
     type: "item",
-    text: "全部",
+    text: "Total",
     icon: HIconName.Home,
     sub: allCount.value,
     color: colors.value.all,
@@ -97,7 +97,7 @@ const filterItems: ComputedRef<NavListItem[]> = computed(() => [
   },
   {
     type: "item",
-    text: "文章",
+    text: "Post",
     icon: HIconName.Edit,
     sub: postsCount.value,
     color: colors.value.post,
@@ -106,7 +106,7 @@ const filterItems: ComputedRef<NavListItem[]> = computed(() => [
   },
   {
     type: "item",
-    text: "页面",
+    text: "Page",
     icon: HIconName.Page,
     sub: pagesCount.value,
     color: colors.value.page,
@@ -115,7 +115,7 @@ const filterItems: ComputedRef<NavListItem[]> = computed(() => [
   },
   {
     type: "item",
-    text: "草稿",
+    text: "Draft",
     icon: HIconName.Read,
     sub: draftsCount.value,
     color: colors.value.draft,
@@ -127,7 +127,7 @@ const filterItems: ComputedRef<NavListItem[]> = computed(() => [
 
 //#region category
 const categoryItems: ComputedRef<NavListItem[]> = computed(() => {
-  const res: NavListItem[] = [{ type: "title", label: "分类" }]
+  const res: NavListItem[] = [{ type: "title", label: "Category" }]
   function go(c: TreeNode<Category, "children">, i = 0) {
     res.push({
       type: "item",
