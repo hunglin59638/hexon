@@ -12,7 +12,7 @@ export function useNavConfig() {
   const config = [
     {
       type: "item" as const,
-      text: "用户",
+      text: "User",
       icon: HIconName.Contact,
       color: vars.value.colorSuccess,
       key: "user" as const,
@@ -20,7 +20,7 @@ export function useNavConfig() {
     },
     {
       type: "item" as const,
-      text: "样式",
+      text: "Style",
       icon: HIconName.OEM,
       color: vars.value.colorWarning,
       key: "style" as const,
@@ -28,7 +28,7 @@ export function useNavConfig() {
     },
     {
       type: "item" as const,
-      text: "关于",
+      text: "About",
       icon: HIconName.Info,
       color: vars.value.textColorSecondary,
       key: "about" as const,
